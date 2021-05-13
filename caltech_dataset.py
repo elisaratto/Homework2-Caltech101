@@ -38,7 +38,7 @@ class Caltech(VisionDataset):
         
         for path in paths:
             fields = path.split('/') #fields[0] = class_name
-             if fields[0] in label_dict: #if label already met
+                if fields[0] in label_dict: #if label already met
                     labels.append(label_dict[fields[0]]) #assign corresponding label
                     img_paths.append(path) #assign corresponding image path
                 else:
