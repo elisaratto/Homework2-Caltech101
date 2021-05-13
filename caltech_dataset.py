@@ -49,7 +49,7 @@ class Caltech(VisionDataset):
                     img_paths.append(path)
                     
              
-         self.dataset = pd.DataFrame({'path': img_paths, 'label': labels]) #dataset = {path-label}
+        self.dataset = pd.DataFrame({'path': img_paths, 'label': labels]) #dataset = {path-label}
         
 
         '''
