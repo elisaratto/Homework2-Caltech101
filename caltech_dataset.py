@@ -48,7 +48,7 @@ class Caltech(VisionDataset):
                     labels.append(label_counter);
                     img_paths.append(path)
         
-        self.dataset = pd.DataFrame({'path': img_paths, 'label': labels]);
+            self.dataset = pd.DataFrame({'path': img_paths, 'label': labels]);
 
         '''
         - Here you should implement the logic for reading the splits files and accessing elements
