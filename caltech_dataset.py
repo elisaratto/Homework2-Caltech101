@@ -38,15 +38,14 @@ class Caltech(VisionDataset):
         
         for path in paths:
             fields = path.split('/') #fields[0] = class_name
-            if fields[0]!='BACKGROUND_Google': #drop BACKGROUND_Google folder
-                if fields[0] in label_dict: #if it's already in the dictionary, since it is ordered, the label will be the current counter
-                    labels.append(label_counter); #assign label
-                    img_paths.append(path); #to corrispondent img path
-                else: #if not in the dictionary, increment counter so you have a new value
-                    label_counter += 1
-                    labels_dict[fields[0]] = label_counter; #define the label associated to the category "fields[0]"
-                    labels.append(label_counter);
-                    img_paths.append(path)
+             if fields[0] in label_dict: #if label already met
+                    labels.append(label_dict[fields[0]]) #assign corresponding label
+                    img_paths.append(path) #assign corresponding image path
+                else:
+                    label_dict[fields[0]] = label_counter; #add new label to the dictionary
+                    labels.append(label_counter); #assign corresponding label
+                    img_paths.append(path) #assign corresponding image path
+                    label_counter += 1 #increment label counter
         
         self.dataset = pd.DataFrame({'path': img_paths, 'label': labels})
                                      
