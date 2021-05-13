@@ -34,7 +34,7 @@ class Caltech(VisionDataset):
         
         self.split_path = os.path.join(self.root.split('/')[0], self.split) # split file path -> file where to put datas
         
-        paths = np.loadtext(self.split_path, dtype=str)
+        paths = np.loadtxt(self.split_path, dtype=str)
         
         for path in paths:
             fields = path.split('/') #fields[0] = class_name
