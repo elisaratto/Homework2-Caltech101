@@ -26,7 +26,7 @@ class Caltech(VisionDataset):
         labels = []
         img_paths = []
 
-        self.split = split # This defines the split you are going to use
+        self.split = split + '.txt'  # This defines the split you are going to use
                            # (split files are called 'train.txt' and 'test.txt')
         self.root = root
         self.transform = transform
