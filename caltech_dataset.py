@@ -47,10 +47,8 @@ class Caltech(VisionDataset):
                     labels_dict[fields[0]] = label_counter; #define the label associated to the category "fields[0]"
                     labels.append(label_counter);
                     img_paths.append(path)
-                    
-             
-        self.dataset = pd.DataFrame({'path': img_paths, 'label': labels]) #dataset = {path-label}
         
+        self.dataset = pd.DataFrame({'path': img_paths, 'label': labels]) #dataset = {path-label}
 
         '''
         - Here you should implement the logic for reading the splits files and accessing elements
