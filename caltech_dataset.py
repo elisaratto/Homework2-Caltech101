@@ -58,9 +58,6 @@ class Caltech(VisionDataset):
         Returns:
             tuple: (sample, target) where target is class_index of the target class.
         '''
-
-        return image, label
-
         image = pil_loader(os.path.join(self.root, self.dataset.iloc[index, 0]))
         label = self.dataset.iloc[index, 1]
         
